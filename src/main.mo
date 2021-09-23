@@ -25,7 +25,7 @@ shared({ caller = hub }) actor class Hub() = this {
     };
     stable var INITALIZED : Bool = false;
 
-    stable var TOPUP_AMOUNT             = 2_000_000;
+    stable var TOPUP_AMOUNT             = 1_300_000_000;
     stable var BROKER_CALL_LIMIT        = 25;
     stable var BROKER_FAILED_CALL_LIMIT = 25;
 
