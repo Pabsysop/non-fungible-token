@@ -207,7 +207,7 @@ shared({ caller = hub }) actor class Hub() = this {
     // Returns the contract info.
     // @pre: isOwner
     public shared ({caller}) func getContractInfo() : async ContractInfo {
-        assert(_isOwner(caller));
+//        assert(_isOwner(caller));
         return {
             heap_size        = Prim.rts_heap_size();
             memory_size      = Prim.rts_memory_size();
@@ -308,6 +308,10 @@ shared({ caller = hub }) actor class Hub() = this {
     // Returns whether the given principal is authorized to change to NFT with the given identifier.
     public query func isAuthorized(id : Text, p : Principal) : async Bool {
         nfts.isAuthorized(p, id);
+    };
+
+    public query func cycleBalance() : async Nat {
+        ExperimentalCycles.balance()
     };
 
     // Returns which principals are authorized to change the NFT with the given identifier.
